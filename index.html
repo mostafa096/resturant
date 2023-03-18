@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Yummy</title>
+  </head>
+  <body class="bg-black" onload="SearchByName('a')">
+    <!-- side nav -->
+    <div class="side-nav position-fixed top-0 d-flex z-3">
+      <div
+        class="nave-body bg-black p-4 d-flex flex-column justify-content-between"
+      >
+        <div class="tabs">
+          <ul class="list-unstyled text-decoration-none overflow-hidden">
+            <li class="py-2 position-relative text-white cursor-pointer">
+              Search
+            </li>
+            <li class="py-2 position-relative text-white cursor-pointer">
+              Categories
+            </li>
+            <li class="py-2 position-relative text-white cursor-pointer">
+              Area
+            </li>
+            <li class="py-2 position-relative text-white cursor-pointer">
+              Ingredients
+            </li>
+            <li class="py-2 position-relative text-white cursor-pointer">
+              Contact Us
+            </li>
+          </ul>
+        </div>
+        <div class="nav-footer text-white">
+          <div class="icons">
+            <a class="text-white" href="#"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a class="text-white" href="#"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a class="text-white" href="#"
+              ><i class="fa-solid fa-globe p-1"></i
+            ></a>
+          </div>
+          <p>Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+      <div
+        class="nav-header d-flex flex-column bg-white vh-100 nav-head align-items-center justify-content-between py-4"
+      >
+        <div class="logo w-75">
+          <img class="w-100" src="imgs/logo.png" alt="" srcset="" />
+        </div>
+
+        <div class="menu-open-close">
+          <a class="text-black fs-2" href="#"
+            ><i class="fa-solid fa-bars"></i>
+          </a>
+        </div>
+        <div class="footer-icon d-flex flex-column">
+          <a class="text-black" href="#"
+            ><i class="fa-solid fa-globe p-1 fs-5"></i
+          ></a>
+          <a class="text-black" href="#">
+            <i class="fa-solid fa-share-nodes p-1 fs-5"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <!-- page content -->
+
+    <div class="container">
+      <div class="search mb-5 mt-4"></div>
+      <div class="main-content mb-5 min-vh-100"></div>
+    </div>
+    <script src="js/Jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.side-nav {
+  left: -260px;
+}
+
+.nav-header {
+  width: 65px;
+}
+
+.nave-body {
+  width: 255px;
+}
+
+.tabs ul {
+  height: 200px;
+}
+
+.tabs ul li {
+  top: 220px;
+}
+
+::placeholder {
+  color: #6c757d !important;
+}
+
+.product-img .slide-up {
+  top: 530px;
+  transition: top 0.5s  !important;
+}
+.product-img:hover .slide-up {
+  top: 0 !important;
+}
+
+
