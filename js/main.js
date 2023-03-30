@@ -30,7 +30,7 @@ function hideTaps() {
 // search
 
 $(".tabs ul li:first-of-type").click(function () {
-  $(".container .search").html(`<div class="row search justify-content-center">
+  $(".container .search").html(`<div class="row justify-content-center">
         <div class="mb-3 col-md-5">
           <input
           onkeyup="SearchByName(this.value)"
@@ -211,7 +211,7 @@ $(".tabs ul li:nth-child(2)").click(async function () {
   let categoriesBox = ``;
   for (let i = 0; i < res.categories.length; i++) {
     categoriesBox += `
-          <div class="col-md-3">
+          <div class="col-sm-6 col-md-4 col-lg-3 ">
             <div onclick="displaycategory ('${res.categories[i].strCategory}')"
               class="product-img rounded-3 overflow-hidden position-relative cursor-pointer"
             >
@@ -375,28 +375,86 @@ $(".tabs ul li:last-of-type").click(function (e) {
   `);
 });
 
-function validation(e) {
-  let namePattern = //
-    console.log(e.id);
-  if (e.id === "nameInput") {
-    console.log(e.value);
-  } else if (e.id === "emailInput") {
-    console.log("yes");
-  } else if (e.id === "phoneInput") {
-    console.log("yes");
-  } else if (e.id === "passwordInput") {
-    console.log("yes");
-  } else if (e.id === "repasswordInput") {
-    console.log("yes");
-  } else if (e.id === "ageInput") {
-    console.log("yes");
-  }
-  // $("#nameInput");
-}
 
-// nameInput
-// main.js:379 emailInput
-// main.js:379 phoneInput
-// main.js:379 passwordInput
-// main.js:379 repasswordInput
-// main.js:379 ageInput
+let nameValedate = false;
+let phoneValedate = false;
+let passValedate = false;
+let rePassValedate = false;
+let ageValedate = false;
+let emailValedate = false;
+
+function validation(e) {
+  
+
+  if (e.id === "nameInput") {
+    $("#nameAlert").addClass("d-none");
+
+    if (/[a-zA-Z0-9]{1,}$/.test(e.value)) {
+      nameValedate = true;
+    } else {
+      $("#nameAlert").removeClass("d-none");
+      nameValedate = false;
+    }
+  }
+
+  if (e.id === "emailInput") {
+    $("#emailAlert").addClass("d-none");
+
+    if (/\w+@\w+\.[a-zA-Z]{2,}$/.test(e.value)) {
+      emailValedate = true;
+    } else {
+      $("#emailAlert").removeClass("d-none");
+      emailValedate = false;
+    }
+  }
+  if (e.id === "phoneInput") {
+    $("#phoneAlert").addClass("d-none");
+
+    if (/^\d{10,12}$/.test(e.value)) {
+      phoneValedate = true;
+    } else {
+      $("#phoneAlert").removeClass("d-none");
+      phoneValedate = true;
+    }
+  }
+  if (e.id === "passwordInput") {
+    $("#passwordAlert").addClass("d-none");
+
+    if (/^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,}$/.test(e.value)) {
+      passValedate = true;
+    } else {
+      $("#passwordAlert").removeClass("d-none");
+      passValedate = true;
+    }
+  }
+  if (e.id === "repasswordInput") {
+    if ($("#passwordInput").val() === $("#repasswordInput").val()) {
+      $("#repasswordAlert").addClass("d-none");
+      rePassValedate = true;
+    } else {
+      $("#repasswordAlert").removeClass("d-none");
+      rePassValedate = false;
+    }
+  }
+  if (e.id === "ageInput") {
+    if (+$("#ageInput").val() > 0) {
+      $("#ageAlert").addClass("d-none");
+      ageValedate = true;
+    } else {
+      $("#ageAlert").removeClass("d-none");
+      ageValedate = false;
+    }
+  }
+  if (
+    nameValedate === true &&
+    phoneValedate === true &&
+    passValedate === true &&
+    rePassValedate === true &&
+    ageValedate === true &&
+    emailValedate === true
+  ) {
+    $("#submitBtn").removeClass("disabled");
+  } else {
+    $("#submitBtn").addClass("disabled");
+  }
+}

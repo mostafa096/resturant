@@ -4,6 +4,7 @@
 
 .side-nav {
   left: -260px;
+  z-index: 999;
 }
 
 .nav-header {
@@ -28,10 +29,15 @@
 
 .product-img .slide-up {
   top: 530px;
-  transition: top 0.5s  !important;
+  transition: top 0.5s !important;
 }
 .product-img:hover .slide-up {
   top: 0 !important;
 }
 
-
+@media (max-width: 992px) {
+  .search,
+  .main-content {
+    margin-left: 60px;
+  }
+}
